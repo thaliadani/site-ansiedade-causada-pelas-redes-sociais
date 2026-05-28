@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/quiz.css">
+    <title>Ansiedade causada pelas redes sociais</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>Ansiedade causada pelas redes sociais</h1>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><button id="botao-temas">Temas</button></li>
+                <li><a href="./quiz.html">Quiz</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+
+        <div id="menu-temas">
+            <ul>
+                <li><a href="./temas/medo-de-ficar-de-fora.html">Medo de Ficar de Fora</a></li>
+                <li><a href="./temas/comparacao-social-e-distorcao-da-realidade.html">Comparação Social e
+                        Distorção da Realidade</a></li>
+                <li><a href="./temas/doomscrolling-e-sobrecarga-de-informacao.html">Doomscrolling e
+                        Sobrecarga de Informação</a></li>
+                <li><a href="./temas/cultura-do-cancelamento-e-medo-do-julgamento.html">Cultura do
+                        Cancelamento e Medo do Julgamento</a></li>
+                <li><a href="./temas/sono-e-a-sindrome-do-toque-fantasma.html">Sono e a Síndrome do Toque
+                        Fantasma</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="conteudo-principal">
+        <h2>Quiz</h2>
+        <div id="quiz-container">
+            <div id="progresso-container" style="display: none;">
+                <div id="barra-progresso"></div>
+            </div>
+            <p id="descricao-quiz">Um quiz para testar seu conhecimento sobre ansiedade causada pelas redes sociais.</p>
+            <div id="pergunta-container" style="display: none;">
+                <h3 id="pergunta-texto"></h3>
+                <div id="opcoes-container"></div>
+            </div>
+            <div id="resultado-container" style="display: none;">
+                <h3 id="resultado-texto"></h3>
+                <button id="botao-revisar" class="botao-quiz">Revisar Erros</button>
+                <button onclick="location.reload()" class="botao-quiz">Reiniciar Quiz</button>
+            </div>
+            <button id="botao-iniciar" class="botao-quiz">Começar Quiz</button>
+        </div>
+
+        <div id="revisao-container" style="display: none;">
+            <h3>Revisão de Respostas</h3>
+            <div id="lista-revisao"></div>
+            <button onclick="location.reload()" class="botao-quiz">Voltar</button>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>Copyright © 2026 - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="../scripts/botaoTemas.js"></script>
+    <script src="../scripts/quiz.js"></script>
+</body>
+
+</html>

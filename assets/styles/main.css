@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(./reset.css);
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+:root {
+    --cor-principal: #F8F9FA;
+    --cor-secundaria: #4A7C59;
+    --cor-textos: #131313;
+    --cor-destaque: #E07A5F;
+
+    --fonte-titulos: "Poppins", sans-serif;
+    --fonte-textos: "Inter", sans-serif;
+    
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --sombra-card: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: var(--fonte-textos);
+    background-color: var(--cor-principal);
+    color: var(--cor-textos);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalho {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho h1 {
+    font-weight: 500;
+    font-size: 2rem;
+    transition: color 0.3s ease;
+    transition: var(--transicao);
+    display: inline-block;
+}
+
+.cabecalho .menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cabecalho .menu a,
+.cabecalho .menu #botao-temas,
+.cabecalho #menu-temas a {
+    color: var(--cor-principal);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.cabecalho .menu #botao-temas {
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.cabecalho .menu a:hover,
+.cabecalho .menu #botao-temas:hover,
+.cabecalho #menu-temas a:hover {
+    color: var(--cor-destaque);
+}
+
+.cabecalho #menu-temas {
+    display: none;
+    position: absolute;
+    background-color: var(--cor-secundaria);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    top: 182px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.cabecalho #menu-temas ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.conteudo-principal {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.conteudo-principal h2 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-secundaria);
+    font-size: 1.5rem;
+}
+
+.conteudo-principal p {
+    font-family: var(--fonte-textos);
+    font-size: 1rem;
+    color: var(--cor-textos);
+}
+
+.conteudo-principal .sobre-tema,
+.conteudo-principal .solucao-tema,
+.conteudo-principal .referencias-tema,
+.conteudo-principal .mensagem-tema {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.conteudo-principal table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.conteudo-principal table th,
+.conteudo-principal table td {
+    border: 1px solid rgba(74, 124, 89, 0.2);
+    padding: 0.5rem;
+    text-align: left;
+    transition: var(--transicao);
+}
+
+.conteudo-principal table th {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+}
+
+.conteudo-principal ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.conteudo-principal ul li {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.conteudo-principal .referencias-tema ul li a {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.conteudo-principal .referencias-tema ul li a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+.conteudo-principal blockquote {
+    border-left: 4px solid var(--cor-destaque);
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+    color: var(--cor-textos);
+}
+
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
