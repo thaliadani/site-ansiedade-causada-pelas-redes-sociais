@@ -15,7 +15,7 @@ Este projeto foi desenvolvido como uma plataforma informativa que aborda fenôme
 * 🔍 **Acessibilidade de Texto:** Botões flutuantes para aumentar, diminuir e resetar o tamanho da fonte, garantindo uma leitura confortável para todos.
 * 📝 **Quiz Interativo:** Um teste de 10 perguntas com barra de progresso e sistema de revisão de erros para testar o conhecimento adquirido.
 * 📱 **Design Responsivo:** Interface otimizada para dispositivos móveis, tablets e desktops seguindo a filosofia *Mobile-First*.
-* 🧭 **Menu de Temas Dinâmico:** Navegação rápida e animada para todas as subpáginas de conteúdo.
+* 🧭 **Menu de Conteúdos Dinâmico:** Navegação rápida e animada para todas as subpages de conteúdo.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -30,11 +30,11 @@ site/
 ├── index.html              # Página inicial
 ├── assets/
 │   ├── pages/              # Páginas de conteúdo, quiz e sobre
-│   │   └── temas/          # Páginas específicas dos temas detalhados
+│   │   └── conteudos/      # Páginas específicas dos conteúdos detalhados
 │   ├── scripts/            # Lógica separada por funcionalidade
 │   │   ├── acessibilidade.js
-│   │   ├── tema.js
-│   │   ├── botaoTemas.js
+│   │   ├── tema.js         # Lógica para alternar entre tema claro/escuro
+│   │   ├── botaoConteudos.js # Lógica para abrir/fechar o menu de conteúdos
 │   │   └── quiz.js
 │   └── styles/             # Arquivos de estilização CSS
 │       ├── main.css

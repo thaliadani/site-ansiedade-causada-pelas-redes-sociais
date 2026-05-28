@@ -41,7 +41,7 @@ body.dark-mode .cabecalho,
 body.dark-mode .rodape,
 body.dark-mode .conteudo-principal table th,
 body.dark-mode .controles-acessibilidade button,
-body.dark-mode #menu-temas {
+body.dark-mode #menu-conteudos { /* Já estava correto */
     background-color: #1B2E21;
     color: #F8F9FA;
 }
@@ -52,14 +52,14 @@ body.dark-mode .conteudo-principal table td {
 }
 
 body.dark-mode .cabecalho .menu a,
-body.dark-mode .cabecalho .menu #botao-temas,
-body.dark-mode .cabecalho #menu-temas a {
+body.dark-mode .cabecalho .menu #botao-conteudos, /* Já estava correto */
+body.dark-mode .cabecalho #menu-conteudos a { /* Já estava correto */
     color: #F8F9FA;
 }
 
 body.dark-mode .cabecalho .menu a:hover,
-body.dark-mode .cabecalho .menu #botao-temas:hover,
-body.dark-mode .cabecalho #menu-temas a:hover {
+body.dark-mode .cabecalho .menu #botao-conteudos:hover, /* Já estava correto */
+body.dark-mode .cabecalho #menu-conteudos a:hover { /* Já estava correto */
     color: var(--cor-destaque);
 }
 
@@ -110,15 +110,15 @@ body {
 }
 
 .cabecalho .menu a,
-.cabecalho .menu #botao-temas,
-.cabecalho #menu-temas a {
+.cabecalho .menu #botao-conteudos, /* Já estava correto */
+.cabecalho #menu-conteudos a { /* Já estava correto */
     color: var(--cor-principal);
     font-weight: 500;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.cabecalho .menu #botao-temas {
+.cabecalho .menu #botao-conteudos { /* Já estava correto */
     background: none;
     border: none;
     font-family: inherit;
@@ -126,12 +126,12 @@ body {
 }
 
 .cabecalho .menu a:hover,
-.cabecalho .menu #botao-temas:hover,
-.cabecalho #menu-temas a:hover {
+.cabecalho .menu #botao-conteudos:hover, /* Já estava correto */
+.cabecalho #menu-conteudos a:hover { /* Já estava correto */
     color: var(--cor-destaque);
 }
 
-.cabecalho #menu-temas {
+.cabecalho #menu-conteudos { /* Já estava correto */
     position: absolute;
     background-color: var(--cor-secundaria);
     padding: 0.5rem;
@@ -151,7 +151,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
 }
 
-.cabecalho #menu-temas.aberto {
+.cabecalho #menu-conteudos.aberto { /* Já estava correto */
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -159,7 +159,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
 }
 
-.cabecalho #menu-temas ul {
+.cabecalho #menu-conteudos ul { /* Já estava correto */
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -167,18 +167,18 @@ body {
     padding: 0.5rem;
 }
 
-.cabecalho #menu-temas ul li a {
+.cabecalho #menu-conteudos ul li a { /* Já estava correto */
     display: block;
     padding: 0.8rem 1rem;
     border-radius: 0.5rem;
     transition: background-color 0.2s, color 0.3s;
 }
 
-.cabecalho #menu-temas ul li a:hover {
+.cabecalho #menu-conteudos ul li a:hover { /* Já estava correto */
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode #menu-temas ul li a:hover {
+body.dark-mode #menu-conteudos ul li a:hover { /* Já estava correto */
     background-color: rgba(255, 255, 255, 0.05);
 }
 
@@ -247,13 +247,19 @@ body.dark-mode #menu-temas ul li a:hover {
     list-style-type: disc;
 }
 
-.conteudo-principal .referencias-tema ul li a {
+.sobre-conteudo, .solucao-conteudo, .referencias-conteudo, .mensagem-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.conteudo-principal .referencias-conteudo ul li a {
     color: var(--cor-destaque);
     text-decoration: none;
     font-weight: 500;
 }
 
-.conteudo-principal .referencias-tema ul li a:hover {
+.conteudo-principal .referencias-conteudo ul li a:hover {
     color: var(--cor-secundaria);
     text-decoration: underline;
 }
@@ -310,7 +316,7 @@ body.dark-mode #menu-temas ul li a:hover {
 @media (min-width: 768px) {
     .cabecalho h1 { font-size: 1.8rem; }
     .cabecalho .menu ul { gap: 1.5rem; }
-    .cabecalho .menu a, .cabecalho .menu #botao-temas { font-size: 1rem; }
+    .cabecalho .menu a, .cabecalho .menu #botao-conteudos { font-size: 1rem; } /* Já estava correto */
     
     .conteudo-principal {
         width: 85%;
