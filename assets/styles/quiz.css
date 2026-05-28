@@ -5,8 +5,8 @@
 }
 
 #quiz-container, #revisao-container {
-    background-color: #fff;
-    padding: 2rem;
+    background-color: var(--cor-card);
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: var(--sombra-suave);
     width: 100%;
@@ -20,7 +20,7 @@
     height: 8px;
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 4px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     overflow: hidden;
 }
 
@@ -32,9 +32,10 @@
 }
 
 #pergunta-texto {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--cor-secundaria);
-    line-height: 1.4;
+    font-size: 1.1rem;
+    line-height: 1.3;
 }
 
 #opcoes-container {
@@ -44,7 +45,7 @@
 }
 
 .botao-quiz, .botao-opcao {
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     border: 2px solid var(--cor-secundaria);
     background-color: transparent;
     color: var(--cor-secundaria);
@@ -52,7 +53,7 @@
     cursor: pointer;
     font-family: var(--fonte-textos);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: var(--transicao);
 }
 
@@ -98,4 +99,20 @@
 .errado {
     color: #A4161A;
     font-weight: 700;
+}
+
+/* Ajustes para Tema Escuro no Quiz */
+body.dark-mode .item-revisao:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- ADAPTAÇÕES PARA TELAS MAIORES --- */
+@media (min-width: 768px) {
+    #quiz-container, #revisao-container { padding: 2.5rem; }
+    #pergunta-texto { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .botao-quiz, .botao-opcao { font-size: 1rem; padding: 1rem 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+    #quiz-container { margin-top: 3rem; }
 }

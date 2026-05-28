@@ -17,7 +17,8 @@
     --cor-principal: #F8F9FA;
     --cor-secundaria: #4A7C59;
     --cor-textos: #131313;
-    --cor-destaque: #E07A5F;
+    --cor-destaque: #98351a;
+    --cor-card: #FFFFFF;
 
     --fonte-titulos: "Poppins", sans-serif;
     --fonte-textos: "Inter", sans-serif;
@@ -25,11 +26,47 @@
     --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.08);
     --sombra-card: 0 4px 6px rgba(0, 0, 0, 0.05);
     --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --tamanho-fonte-base: 1rem;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    --cor-textos: #E9ECEF;
+    --cor-secundaria: #7FB08A;
+    --cor-destaque: #FF8C69;
+    --cor-card: #1E1E1E;
+}
+
+body.dark-mode .cabecalho,
+body.dark-mode .rodape,
+body.dark-mode .conteudo-principal table th,
+body.dark-mode .controles-acessibilidade button,
+body.dark-mode #menu-temas {
+    background-color: #1B2E21;
+    color: #F8F9FA;
+}
+
+body.dark-mode .conteudo-principal table th,
+body.dark-mode .conteudo-principal table td {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .cabecalho .menu a,
+body.dark-mode .cabecalho .menu #botao-temas,
+body.dark-mode .cabecalho #menu-temas a {
+    color: #F8F9FA;
+}
+
+body.dark-mode .cabecalho .menu a:hover,
+body.dark-mode .cabecalho .menu #botao-temas:hover,
+body.dark-mode .cabecalho #menu-temas a:hover {
+    color: var(--cor-destaque);
 }
 
 body {
     font-family: var(--fonte-textos);
     background-color: var(--cor-principal);
+    transition: background-color var(--transicao), color var(--transicao);
     color: var(--cor-textos);
     width: 100%;
     min-height: 100vh;
@@ -42,28 +79,30 @@ body {
 .cabecalho {
     background-color: var(--cor-secundaria);
     color: var(--cor-principal);
-    padding: 2rem;
+    transition: background-color var(--transicao), color var(--transicao), box-shadow var(--transicao);
+    padding: 1.5rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .cabecalho h1 {
     font-weight: 500;
-    font-size: 2rem;
-    transition: color 0.3s ease;
+    font-size: 1.5rem;
     transition: var(--transicao);
     display: inline-block;
 }
 
 .cabecalho .menu ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .cabecalho .menu a,
@@ -89,27 +128,58 @@ body {
 }
 
 .cabecalho #menu-temas {
-    display: none;
     position: absolute;
     background-color: var(--cor-secundaria);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    top: 182px;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%);
     z-index: 10;
+    box-shadow: var(--sombra-suave);
+    width: 90%;
+    max-width: 350px;
+    
+    /* Configuração para animação */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.cabecalho #menu-temas.aberto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
 }
 
 .cabecalho #menu-temas ul {
     display: flex;
     flex-direction: column;
     text-align: left;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.2rem;
+    padding: 0.5rem;
+}
+
+.cabecalho #menu-temas ul li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s, color 0.3s;
+}
+
+.cabecalho #menu-temas ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode #menu-temas ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .conteudo-principal {
-    width: 90%;
+    width: 95%;
     margin: 2rem auto;
     padding: 0 1rem;
     display: flex;
@@ -121,13 +191,15 @@ body {
 .conteudo-principal h2 {
     font-family: var(--fonte-titulos);
     color: var(--cor-secundaria);
-    font-size: 1.5rem;
+    transition: color var(--transicao);
+    font-size: calc(var(--tamanho-fonte-base) * 1.5);
 }
 
 .conteudo-principal p {
     font-family: var(--fonte-textos);
-    font-size: 1rem;
+    font-size: var(--tamanho-fonte-base);
     color: var(--cor-textos);
+    transition: color var(--transicao);
 }
 
 .conteudo-principal .sobre-tema,
@@ -142,6 +214,8 @@ body {
 .conteudo-principal table {
     width: 100%;
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
 }
 
 .conteudo-principal table th,
@@ -150,6 +224,7 @@ body {
     padding: 0.5rem;
     text-align: left;
     transition: var(--transicao);
+    font-size: var(--tamanho-fonte-base);
 }
 
 .conteudo-principal table th {
@@ -183,6 +258,7 @@ body {
     border-left: 4px solid var(--cor-destaque);
     padding-left: 1rem;
     margin-left: 0;
+    transition: color var(--transicao);
     font-style: italic;
     color: var(--cor-textos);
 }
@@ -190,7 +266,66 @@ body {
 .rodape {
     background-color: var(--cor-secundaria);
     color: var(--cor-principal);
+    transition: background-color var(--transicao), color var(--transicao);
     text-align: center;
     padding: 1rem;
     width: 100%;
+}
+
+/* Botões de Acessibilidade Flutuantes */
+.controles-acessibilidade {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    z-index: 1000;
+}
+
+.controles-acessibilidade button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicao);
+    font-size: 1rem;
+}
+
+.controles-acessibilidade button:hover {
+    background-color: var(--cor-destaque);
+    transform: scale(1.1);
+}
+
+/* --- TABLETS (768px) --- */
+@media (min-width: 768px) {
+    .cabecalho h1 { font-size: 1.8rem; }
+    .cabecalho .menu ul { gap: 1.5rem; }
+    .cabecalho .menu a, .cabecalho .menu #botao-temas { font-size: 1rem; }
+    
+    .conteudo-principal {
+        width: 85%;
+        gap: 2.5rem;
+    }
+    
+    .conteudo-principal table { display: table; }
+}
+
+/* --- DESKTOP (1024px+) --- */
+@media (min-width: 1024px) {
+    .cabecalho {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1.5rem 5%;
+    }
+
+    .conteudo-principal {
+        max-width: 1000px;
+        width: 80%;
+    }
 }
