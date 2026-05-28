@@ -199,6 +199,20 @@ body.dark-mode #menu-conteudos ul li a:hover { /* Já estava correto */
     font-size: calc(var(--tamanho-fonte-base) * 1.5);
 }
 
+.conteudo-principal h3 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-secundaria);
+    transition: color var(--transicao);
+    font-size: calc(var(--tamanho-fonte-base) * 1.5);
+}
+
+.conteudo-principal h4 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-secundaria);
+    transition: color var(--transicao);
+    font-size: calc(var(--tamanho-fonte-base) * 1.5);
+}
+
 .conteudo-principal p {
     font-family: var(--fonte-textos);
     font-size: var(--tamanho-fonte-base);
@@ -245,6 +259,7 @@ body.dark-mode #menu-conteudos ul li a:hover { /* Já estava correto */
 .conteudo-principal ul li {
     margin-left: 1.5rem;
     list-style-type: disc;
+    font-size: var(--tamanho-fonte-base);
 }
 
 .sobre-conteudo, .solucao-conteudo, .referencias-conteudo, .mensagem-conteudo {
@@ -280,7 +295,9 @@ body.dark-mode #menu-conteudos ul li a:hover { /* Já estava correto */
     text-align: center;
     padding: 1rem;
     width: 100%;
+font-size: var(--tamanho-fonte-base);
 }
+
 
 /* Botões de Acessibilidade Flutuantes */
 .controles-acessibilidade {
