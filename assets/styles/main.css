@@ -98,6 +98,10 @@ body {
     display: inline-block;
 }
 
+.menu {
+    position: relative;
+}
+
 .cabecalho .menu ul {
     display: flex;
     flex-wrap: wrap;
@@ -151,7 +155,7 @@ body {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(15px);
+    transform: translateX(-50%) translateY(8px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
 }
 
