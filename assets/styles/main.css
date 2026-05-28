@@ -284,6 +284,7 @@ body.dark-mode #menu-conteudos ul li a:hover { /* Já estava correto */
     padding-left: 1rem;
     margin-left: 0;
     transition: color var(--transicao);
+    font-size: var(--tamanho-fonte-base);
     font-style: italic;
     color: var(--cor-textos);
 }
